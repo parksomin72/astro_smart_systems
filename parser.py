@@ -1,16 +1,15 @@
 def parse_inputs():
-
     print("  Asteroid Collision Detector \n")
-
     name = input("Please provide the name of the asteroid : ").strip()
+    
     if name == "":
         name = "Unknown"
-
     TYPES = {
         "1": ("C-type (carbonaceous)", 1380),
         "2": ("S-type (siliceous/stony)", 2710),
         "3": ("M-type (metallic)", 5320),
     }
+    
     while True:
         print("\nThe type of the asteroid:")
         print("  1 = C-type (carbonaceous, very common)")
@@ -45,7 +44,7 @@ def parse_inputs():
 
     while True:
         try:
-            diameter = float(input("\nPlease enter the diameter (in km): "))
+            diameter = float(input("Please enter the diameter (in km): "))
             if diameter <= 0:
                 print("Invalid ! Please try again")
                 continue
@@ -64,7 +63,6 @@ def parse_inputs():
     }
     return info
 
-
 def main():
     data = parse_inputs()
 
@@ -74,7 +72,6 @@ def main():
     print(f"  -> Diameter  : {data['diam']} km")
     print(f"  -> Speed     : {data['vel']} km/s")
     print(f"  -> Distance : {data['dist']} AU")
-
 
 if __name__ == "__main__":
     main()
