@@ -69,7 +69,8 @@ def main():
     data = parse_inputs()
 
     print(f"  -> Name      : {data['name']}")
-    print(f"  -> Type      : {data['type']} (density {data['density']} kg/m3)")
+    print(f"  -> Type      : {data['type']}")
+    print(f"  -> Density   : {data['density']} kg/m3")
     print(f"  -> Diameter  : {data['diam']} km")
     print(f"  -> Speed     : {data['vel']} km/s")
     print(f"  -> Distance : {data['dist']} AU")
