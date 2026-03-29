@@ -1,9 +1,10 @@
 from AsteroidAnalyzer import AsteroidAnalyzer
+from result_ui import ResultUI
 
 def parse_inputs():
     print("  Asteroid Collision Detector \n")
     name = input("Please provide the name of the asteroid : ").strip()
-    
+
     if name == "":
         name = "Unknown"
     TYPES = {
@@ -11,7 +12,7 @@ def parse_inputs():
         "2": ("S-type (siliceous/stony)", 2710),
         "3": ("M-type (metallic)", 5320),
     }
-    
+
     while True:
         print("\nThe type of the asteroid:")
         print("  1 = C-type (carbonaceous, very common)")
@@ -68,16 +69,10 @@ def parse_inputs():
 def main():
     data = parse_inputs()
 
-    # print(f"  -> Name      : {data['name']}")
-    # print(f"  -> Type      : {data['type']}")
-    # print(f"  -> Density   : {data['density']} kg/m3")
-    # print(f"  -> Diameter  : {data['diam']} km")
-    # print(f"  -> Speed     : {data['vel']} km/s")
-    # print(f"  -> Distance : {data['dist']} AU")
-
     asteroid = AsteroidAnalyzer(data)
     result = asteroid.analyze_asteroid()
-    print(result)
+    result_ui = ResultUI()
+    result_ui.show_result(result)
 
 if __name__ == "__main__":
     main()
